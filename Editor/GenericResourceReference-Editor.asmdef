@@ -1,0 +1,18 @@
+{
+    "name": "GenericResourceReference-Editor",
+    "rootNamespace": "",
+    "references": [
+        "GUID:698ed72d4e6e2c69489dbe0c05aaf154"
+    ],
+    "includePlatforms": [
+        "Editor"
+    ],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
+}

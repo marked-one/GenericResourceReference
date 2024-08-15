@@ -1,0 +1,30 @@
+{
+  "name": "com.vladimirklubkov.genericresourcereference",
+  "version": "1.0.0",
+  "displayName": "Generic Resource Reference",
+  "description": "This is a utility for Unity that provides a more efficient and seamless way of referencing Unity Resources. With this tool, you can bypass the manual text-based referencing with direct object references",
+  "unity": "2021.2",
+  "keywords": [
+    "Generic",
+    "Resource",
+    "Resources",
+    "Reference",
+    "References"
+  ],
+  "license": "MIT",
+  "licensesUrl": "https://github.com/marked-one/GenericResourceReference?tab=License-1-ov-file",
+  "changelogUrl": "https://github.com/marked-one/GenericResourceReference/releases",
+  "documentationUrl": "https://github.com/marked-one/GenericResourceReference",
+  "samples": [
+    {
+      "displayName": "Example",
+      "description": "Basic usage example",
+      "path": "Samples~/Example"
+    }
+  ],
+  "author": {
+    "name": "Vladimir Klubkov",
+    "url": "https://github.com/marked-one"
+  },
+  "unityRelease": "18f1"
+}

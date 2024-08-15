@@ -1,0 +1,20 @@
+{
+    "name": "GenericResourceReference",
+    "rootNamespace": "",
+    "references": [],
+    "includePlatforms": [],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": [
+        {
+            "name": "com.cysharp.unitask",
+            "expression": "",
+            "define": "GENERIC_RESOURCE_REFERENCE_UNITASK_SUPPORT"
+        }
+    ],
+    "noEngineReferences": false
+}
