@@ -6,6 +6,12 @@ namespace GenericResourceReference {
         const string _emptyLabel = " ";
         const string _notAResourceMessagePrefix = "Not a Resource: ";
 
+#if UNITY_2022_2_OR_NEWER
+        const float _foldoutOffset = 15f;
+#else
+        const float _foldoutOffset = 0f;
+#endif
+
         readonly Rect _position;
         readonly AssetState _assetState;
         readonly string _message;
@@ -20,15 +26,15 @@ namespace GenericResourceReference {
         public bool IsError => _assetState is AssetState.Missing or AssetState.Asset;
 
         public Rect ObjectRect => new() {
-            x = ShouldDisplayMessage ? _position.x + EditorGUIUtility.singleLineHeight : _position.x,
+            x = _position.x,
             y = _position.y,
-            width = ShouldDisplayMessage ? _position.width - EditorGUIUtility.singleLineHeight : _position.width,
+            width = _position.width,
             height = EditorGUIUtility.singleLineHeight
         };
 
         public Rect FoldoutRect => new() {
-            x = _position.x, y = _position.y,
-            width = EditorGUIUtility.singleLineHeight,
+            x = _position.x - _foldoutOffset, y = _position.y,
+            width = _position.width + _foldoutOffset,
             height = EditorGUIUtility.singleLineHeight
         };
 
@@ -37,9 +43,9 @@ namespace GenericResourceReference {
         public bool ShouldDisplayMessage => _assetState != AssetState.None;
 
         public Rect MessageRect => new() {
-            x = _position.x + EditorGUIUtility.singleLineHeight,
+            x = _position.x,
             y = _position.y + EditorGUIUtility.singleLineHeight,
-            width = _position.width - EditorGUIUtility.singleLineHeight * 2,
+            width = _position.width - EditorGUIUtility.singleLineHeight,
             height = EditorGUIUtility.singleLineHeight
         };
 

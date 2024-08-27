@@ -68,7 +68,16 @@ namespace GenericResourceReference {
         static bool DrawFoldout(GuiContext context, SerializedProperty property) {
             var unfoldedProperty = property.FindPropertyRelative(_unfoldedPropertyName);
             var isUnfolded = unfoldedProperty.boolValue;
-            unfoldedProperty.boolValue = EditorGUI.Foldout(context.FoldoutRect, isUnfolded, context.FoldoutLabel);
+
+            var foldoutRect = context.FoldoutRect;
+            unfoldedProperty.boolValue = EditorGUI.Foldout(foldoutRect, isUnfolded, context.FoldoutLabel);
+
+            var currentEvent = Event.current;
+            if (currentEvent.type == EventType.MouseDown && foldoutRect.Contains(currentEvent.mousePosition)) {
+                unfoldedProperty.boolValue = !isUnfolded;
+                currentEvent.Use();
+            }
+
             return isUnfolded;
         }
 
