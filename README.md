@@ -59,7 +59,7 @@ public class Preview : MonoBehaviour {
 
 1. This utility is not a replacement for Addressables, AssetBundles, StreamingAssets etc. It doesn't provide any caching or asset management mechanisms. If you require caching, you may need to implement it yourself or use [UnityResourceReference](https://github.com/paulhayes/UnityResourceReference) that has basic caching functionality.
 
-2. Unity still has issues with generics within serializable collections or other generics, and this is no exception. If you need e.g. a `List<ResourcePath<Material>>` or an array, this will likely fail in build due to layout issues. Workarounds are to either use a non-generic `List<ResourcePath>`, or to create a non-generic subclass: `public class MaterialResourcePath : ResourcePath<Material> { }` and  `List<MaterialResourcePath>`.
+2. Unity still has issues with generics within serializable collections or other generics, and this asset is no exception. If you need e.g. a `List<ResourcePath<Material>>` or an array, this will likely fail in build due to layout issues. Workarounds are to either use a non-generic `List<ResourcePath>`, or to create a non-generic subclass: `public class MaterialResourcePath : ResourcePath<Material> { }` and  `List<MaterialResourcePath>`.
 
 ---
 
