@@ -34,9 +34,9 @@ public class Preview : MonoBehaviour {
 - Supports all resource types supported by Unity including folders and prefabs
 - Support for resources in packages
 - Three specialized classes:
-  - `ResourcePath<>` for only holding the path to any supported resource, including folders
-  - `ResourceReference<>` for loading any non-folder resources
-  - `ResourceFolder` for loading the contents of any resource folders, including the`Resources` folder itself
+  - `ResourcePath<>`/`ResourcePath` for only holding and exposing the path to any supported resource, including folders
+  - `ResourceReference<>`/`ResourceReference` with methods for loading any non-folder resources
+  - `ResourceFolder` with methods for loading the contents of any resource folders, including the`Resources` folder itself
 - Minimal Runtime impact: the resource path string is simply wrapped into a serializable class, no other data stored
 - Inspector displays the path of the asset, not just the resource path:
 
@@ -57,7 +57,9 @@ public class Preview : MonoBehaviour {
 
 ## Limitations
 
-This utility is not a replacement for Addressables, AssetBundles, StreamingAssets etc. It doesn't provide any caching or asset management mechanisms. If you require caching, you may need to implement it yourself or use [UnityResourceReference](https://github.com/paulhayes/UnityResourceReference) that has basic caching functionality.
+1. This utility is not a replacement for Addressables, AssetBundles, StreamingAssets etc. It doesn't provide any caching or asset management mechanisms. If you require caching, you may need to implement it yourself or use [UnityResourceReference](https://github.com/paulhayes/UnityResourceReference) that has basic caching functionality.
+
+2. Unity still has issues with generics within serializable collections or other generics, and this is no exception. If you need e.g. a `List<ResourcePath<Material>>` or an array, this will likely fail in build due to layout issues. Workarounds are to either use a non-generic `List<ResourcePath>`, or to create a non-generic subclass: `public class MaterialResourcePath : ResourcePath<Material> { }` and  `List<MaterialResourcePath>`.
 
 ---
 
@@ -73,7 +75,7 @@ This utility is not a replacement for Addressables, AssetBundles, StreamingAsset
 
 Unity 6 is supported
 
-Try [UnityResourceReference](https://github.com/paulhayes/UnityResourceReference) for older versions of Unity
+Note: try [UnityResourceReference](https://github.com/paulhayes/UnityResourceReference) for older versions of Unity
 
 ---
 

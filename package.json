@@ -1,6 +1,6 @@
 {
   "name": "com.vladimirklubkov.genericresourcereference",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "displayName": "Generic Resource Reference",
   "description": "This is a utility for Unity that provides a more efficient and seamless way of referencing Unity Resources. With this tool, you can bypass the manual text-based referencing with direct object references",
   "unity": "2021.2",

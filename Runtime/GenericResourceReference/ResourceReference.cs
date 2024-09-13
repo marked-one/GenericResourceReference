@@ -13,4 +13,7 @@ namespace GenericResourceReference {
         public ResourceRequest LoadAsync<T>() where T : TObject => Resources.LoadAsync<T>(_path);
         public ResourceRequest LoadAsync(Type systemTypeInstance) => Resources.LoadAsync(_path, systemTypeInstance);
     }
+
+    [Serializable]
+    public class ResourceReference : ResourceReference<UnityObject> { }
 }
